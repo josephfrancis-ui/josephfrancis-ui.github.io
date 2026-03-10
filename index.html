@@ -1,177 +1,1323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joseph Francis | Mechanical Engineer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Francis - Mechanical Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <meta name="description" content="Mechanical Engineer with 8+ years of experience in Oil & Gas, piping systems, site execution, EPC projects, and industrial facilities across UK and Middle East.">
+        :root {
+            --primary: #2c3e50;
+            --accent: #d4a574;
+            --secondary: #e67e22;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --white: #ffffff;
+            --success: #27ae60;
+        }
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    :root{
-      --primary:#2c3e50;
-      --accent:#d4a574;
-      --secondary:#e67e22;
-      --light:#ecf0f1;
-      --dark:#34495e;
-      --white:#ffffff;
-      --success:#27ae60;
-    }
-    body{
-      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-      line-height:1.6;
-      color:var(--primary);
-      background:var(--light);
-    }
-    .container{max-width:1200px;margin:auto;padding:0 20px}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background: var(--light);
+        }
 
-    header{
-      background:linear-gradient(135deg,var(--primary),var(--dark));
-      color:white;
-      padding:80px 0;
-      text-align:center;
-    }
-    h1{font-size:3em;margin-bottom:10px}
-    .subtitle{font-size:1.6em;color:var(--accent)}
-    .specialization{font-style:italic;margin-bottom:20px}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .contact-info{
-      display:flex;
-      justify-content:center;
-      gap:30px;
-      flex-wrap:wrap;
-      margin-top:20px;
-    }
-    .contact-item{
-      color:white;
-      text-decoration:none;
-      font-weight:600;
-    }
-    .contact-item:hover{color:var(--accent)}
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    nav{
-      background:white;
-      position:sticky;
-      top:0;
-      box-shadow:0 2px 10px rgba(0,0,0,.1);
-    }
-    nav ul{
-      display:flex;
-      justify-content:center;
-      list-style:none;
-      padding:15px;
-      flex-wrap:wrap;
-    }
-    nav li{margin:0 15px}
-    nav a{text-decoration:none;color:var(--primary);font-weight:600}
-    nav a:hover{color:var(--accent)}
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(212,165,116,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
 
-    section{
-      background:white;
-      margin:30px 0;
-      padding:60px 0;
-      border-radius:10px;
-      box-shadow:0 5px 20px rgba(0,0,0,.05);
-    }
-    h2{
-      text-align:center;
-      font-size:2.5em;
-      margin-bottom:30px;
-    }
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
 
-    .about-intro{
-      max-width:900px;
-      margin:auto;
-      text-align:center;
-      font-size:1.1em;
-      color:var(--dark);
-    }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
 
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:20px;
-      margin-top:40px;
-    }
-    .stat-card{
-      background:linear-gradient(135deg,var(--accent),var(--secondary));
-      color:white;
-      padding:30px;
-      border-radius:8px;
-      text-align:center;
-    }
-    .stat-number{font-size:3em;font-weight:700}
+        .subtitle {
+            font-size: 1.6em;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
 
-    footer{
-      background:var(--primary);
-      color:white;
-      text-align:center;
-      padding:30px 0;
-      margin-top:40px;
-    }
+        .specialization {
+            font-size: 1.1em;
+            color: var(--light);
+            font-weight: 300;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
 
-    @media(max-width:768px){
-      h1{font-size:2em}
-      .subtitle{font-size:1.2em}
-    }
-  </style>
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: var(--accent);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 5px 10px;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            background: var(--white);
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Industry Highlights Box */
+        .industry-highlight {
+            background: linear-gradient(135deg, #1a5490 0%, #2980b9 100%);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 900px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .industry-highlight h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .industry-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .industry-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-intro {
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--dark);
+            margin-bottom: 40px;
+        }
+
+        .core-competencies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .competency-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 4px solid var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .competency-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .competency-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .competency-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .competency-card p {
+            color: var(--dark);
+            font-size: 0.95em;
+        }
+
+        .memberships {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .membership-badge {
+            background: var(--accent);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(212,165,116,0.3);
+        }
+
+        /* Site Engineering Capabilities Section */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .capability-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .capability-card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .capability-card ul {
+            list-style: none;
+        }
+
+        .capability-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: var(--dark);
+        }
+
+        .capability-card li::before {
+            content: '✓';
+            color: var(--success);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--light);
+            border-radius: 8px;
+            border-left: 5px solid var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 1.5em;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .company {
+            font-size: 1.2em;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .sector-tag {
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .responsibilities {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .responsibilities li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .responsibilities li::before {
+            content: '▸';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Technical Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .skills-category-large {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .skills-category-large h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        .skills-subcategory {
+            margin-bottom: 20px;
+        }
+
+        .skills-subcategory h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: var(--primary);
+            border: 2px solid var(--accent);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* Projects Section */
+        .projects-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.05em;
+            color: var(--dark);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid var(--accent);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .project-location {
+            color: var(--accent);
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-type {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: var(--light);
+            border-radius: 8px;
+            border-left: 5px solid var(--accent);
+        }
+
+        .degree {
+            font-size: 1.3em;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: var(--accent);
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1em;
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-intro {
+            text-align: center;
+            font-size: 1.05em;
+            color: var(--dark);
+            margin-bottom: 40px;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-form-container {
+            background: var(--light);
+            padding: 35px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.95em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--accent);
+            color: var(--white);
+            padding: 14px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .contact-info-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-detail {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .contact-icon {
+            font-size: 2em;
+            flex-shrink: 0;
+        }
+
+        .contact-detail h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1em;
+        }
+
+        .contact-detail p {
+            color: var(--dark);
+            margin: 0;
+            font-size: 0.95em;
+        }
+
+        .contact-detail a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-detail a:hover {
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+
+            .job-header {
+                flex-direction: column;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info-sidebar {
+                order: -1;
+            }
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <div class="header-content">
+            <h1>Joseph Francis</h1>
+            <p class="subtitle">Mechanical Engineer</p>
+            <p class="specialization">Site Execution | Oil & Gas | Piping & Mechanical Systems</p>
+            <div class="contact-info">
+                <a href="tel:07818972679" class="contact-item">
+                    <span>📞</span>
+                    <span>07818 972679</span>
+                </a>
+                <a href="/cdn-cgi/l/email-protection#1f75706c7a6f77747e7b76667e717e6b6b6a5f706a6b73707074317c7072" class="contact-item">
+                    <span>✉️</span>
+                    <span><span class="__cf_email__" data-cfemail="046e6b7761746c6f65606d7d656a65707071446b7170686b6b6f2a676b69">[email&#160;protected]</span></span>
+                </a>
+                <a href="https://www.linkedin.com/in/joseph-francis-820995145" target="_blank" class="contact-item">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <span class="contact-item">
+                    <span>📍</span>
+                    <span>Scotland, United Kingdom</span>
+                </span>
+            </div>
+        </div>
+    </header>
 
-<header>
-  <h1>Joseph Francis</h1>
-  <p class="subtitle">Mechanical Engineer</p>
-  <p class="specialization">Site Execution | Oil & Gas | Piping & Mechanical Systems</p>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#capabilities">Capabilities</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-  <div class="contact-info">
-    <a href="mailto:josephfrancis77777@gmail.com" class="contact-item">📧 josephfrancis77777@gmail.com</a>
-    <span class="contact-item">📍 Scotland, United Kingdom</span>
-    <a href="https://www.linkedin.com/" target="_blank" class="contact-item">🔗 LinkedIn</a>
-  </div>
-</header>
+    <div class="container">
+        <section id="about">
+            <h2>Professional Profile</h2>
+            <div class="about-content">
+                <p class="about-intro">
+                    Seasoned Mechanical Engineer with 8+ years of extensive experience in Oil & Gas and industrial sectors, specializing in piping systems, mechanical installations, and site execution. Proven track record in managing high-value projects from concept to commissioning across refineries, integrated facilities, and industrial plants. Expert in on-site coordination, quality control, and delivering projects within budget and schedule constraints in demanding environments.
+                </p>
 
-<nav>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
-  </ul>
-</nav>
+                <div class="industry-highlight">
+                    <h3>🛢️ Oil & Gas Industry Expertise</h3>
+                    <p style="text-align: center; margin-bottom: 15px;">
+                        Extensive hands-on experience in major oil & gas projects including refineries, integrated facilities, and upstream/midstream operations across UAE and Oman.
+                    </p>
+                    <div class="industry-tags">
+                        <span class="industry-tag">🔧 Refinery Projects (ADNOC, Duqm)</span>
+                        <span class="industry-tag">⚙️ Piping Design & Installation</span>
+                        <span class="industry-tag">🏗️ EPC Projects</span>
+                        <span class="industry-tag">📋 Integrated Facilities</span>
+                        <span class="industry-tag">✓ Process Piping Systems</span>
+                        <span class="industry-tag">🔩 Upstream Operations</span>
+                    </div>
+                </div>
 
-<div class="container">
+                <div class="core-competencies">
+                    <div class="competency-card">
+                        <div class="competency-icon">🏗️</div>
+                        <h3>Site Supervision</h3>
+                        <p>Expert in on-site coordination, installation oversight, and ensuring zero-defect mechanical work execution</p>
+                    </div>
 
-<section id="about">
-  <h2>Professional Profile</h2>
-  <p class="about-intro">
-    Mechanical Engineer with 8+ years of hands-on experience in Oil & Gas and industrial projects.
-    Specialized in piping systems, mechanical installations, site execution, QA/QC, and EPC environments
-    across refineries and integrated facilities.
-  </p>
+                    <div class="competency-card">
+                        <div class="competency-icon">⚙️</div>
+                        <h3>Piping Specialist</h3>
+                        <p>Advanced expertise in process piping installation, P&ID interpretation, isometric and spool drawing review, and pipeline construction for oil & gas</p>
+                    </div>
 
-  <div class="stats-grid">
-    <div class="stat-card">
-      <div class="stat-number">8+</div>
-      <div>Years Experience</div>
+                    <div class="competency-card">
+                        <div class="competency-icon">✓</div>
+                        <h3>Quality Control</h3>
+                        <p>Rigorous QA/QC protocols, inspection, testing, and compliance with ASME, API, and international standards</p>
+                    </div>
+
+                    <div class="competency-card">
+                        <div class="competency-icon">📋</div>
+                        <h3>Project Management</h3>
+                        <p>End-to-end project execution from planning to commissioning, budget control, and resource optimization</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Major Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Oil & Gas Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Safety Record</div>
+                    </div>
+                </div>
+
+                <div class="memberships">
+                    <span class="membership-badge">AMIMechE - Associate Member Institution of Mechanical Engineers</span>
+                    <span class="membership-badge">AMEI - Associate Member of Energy Institute</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="capabilities">
+            <h2>Core Engineering Capabilities</h2>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <h3>🛢️ Oil & Gas Piping Systems</h3>
+                    <ul>
+                        <li>Process piping installation and execution</li>
+                        <li>Crude oil and product pipeline installation</li>
+                        <li>High-pressure piping systems construction</li>
+                        <li>P&ID review and understanding for site execution</li>
+                        <li>Isometric drawing interpretation and field verification</li>
+                        <li>Spool drawing review and fabrication coordination</li>
+                        <li>Pipeline hydrostatic testing and commissioning</li>
+                        <li>Piping material verification (ASME/API compliance)</li>
+                        <li>Support installation and structural coordination</li>
+                    </ul>
+                </div>
+
+                <div class="capability-card">
+                    <h3>🔧 Mechanical Installation & Erection</h3>
+                    <ul>
+                        <li>HVAC systems installation and commissioning</li>
+                        <li>Boiler erection and steam systems</li>
+                        <li>Chilled water and cooling systems</li>
+                        <li>Firefighting and safety systems</li>
+                        <li>Clean room mechanical installations</li>
+                        <li>Industrial equipment rigging and positioning</li>
+                        <li>Rotating equipment installation</li>
+                    </ul>
+                </div>
+
+                <div class="capability-card">
+                    <h3>📐 Engineering Documentation</h3>
+                    <ul>
+                        <li>P&ID review and interpretation for construction</li>
+                        <li>Isometric drawing review and field verification</li>
+                        <li>Spool drawing coordination and verification</li>
+                        <li>Weldmap review and weld tracking</li>
+                        <li>As-built documentation and redlining</li>
+                        <li>Material take-offs (MTO) for piping procurement</li>
+                        <li>Technical submissions review and approval</li>
+                        <li>Method statements and construction procedures</li>
+                    </ul>
+                </div>
+
+                <div class="capability-card">
+                    <h3>✅ Quality & Safety Management</h3>
+                    <ul>
+                        <li>QA/QC for oil & gas facilities</li>
+                        <li>Welding inspection and NDT coordination</li>
+                        <li>Hydrostatic and pneumatic testing</li>
+                        <li>Code compliance (ASME, API, ASTM, ANSI)</li>
+                        <li>HSE management and permit systems</li>
+                        <li>Snagging and punch list management</li>
+                        <li>Pre-commissioning and commissioning support</li>
+                    </ul>
+                </div>
+
+                <div class="capability-card">
+                    <h3>👥 Project Coordination</h3>
+                    <ul>
+                        <li>Multi-disciplinary team coordination</li>
+                        <li>EPC project execution and management</li>
+                        <li>Subcontractor management and supervision</li>
+                        <li>Progress monitoring and reporting</li>
+                        <li>Client liaison and technical support</li>
+                        <li>Schedule management (Primavera/MS Project)</li>
+                        <li>Budget control and cost optimization</li>
+                    </ul>
+                </div>
+
+                <div class="capability-card">
+                    <h3>🏭 Fabrication & Construction</h3>
+                    <ul>
+                        <li>Piping fabrication shop oversight</li>
+                        <li>Structural steel erection</li>
+                        <li>Stainless steel and alloy fabrication</li>
+                        <li>Welding procedure specifications (WPS)</li>
+                        <li>Material selection and procurement</li>
+                        <li>Construction planning and sequencing</li>
+                        <li>Field modifications and engineering changes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Mechanical Engineer</div>
+                        <div class="company">Europlan Engineering UK Ltd</div>
+                        <div class="date">Inverness, Scotland | January 2025 – Present</div>
+                    </div>
+                </div>
+                <span class="sector-tag">Industrial Manufacturing</span>
+                <ul class="responsibilities">
+                    <li>Site supervision and quality control for mechanical installations in subsea cable manufacturing facility</li>
+                    <li>Value Engineering for Mechanical systems – HVAC, Chilled water, Nitrogen system, Clean Rooms and Firefighting systems</li>
+                    <li>On-site coordination of mechanical contractors and subcontractors for timely project delivery</li>
+                    <li>Material take-offs and cost estimates, streamlining procurement and site material management</li>
+                    <li>Technical submissions assessment and verification for compliance with project requirements and industry standards</li>
+                    <li>Provided field engineering solutions ensuring compliance with UK standards while optimizing costs</li>
+                    <li>Zero-rework achievement through rigorous quality control protocols</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Mechanical Engineer</div>
+                        <div class="company">Epic Piping International</div>
+                        <div class="date">Abu Dhabi, UAE | November 2019 – July 2022</div>
+                    </div>
+                </div>
+                <span class="sector-tag">Oil & Gas - EPC</span>
+                <ul class="responsibilities">
+                    <li>Major Oil & Gas Projects: Worked on ADNOC Refining, ADNOC BAB Integrated Facilities, and ADNOC Shah solar water systems</li>
+                    <li>Piping Engineering: Led piping design review, P&ID verification, isometric drawing review, spool drawing coordination, and pipeline installation for process systems</li>
+                    <li>Managed high-value mechanical and piping projects from site mobilization to commissioning and handover</li>
+                    <li>On-site execution of complex piping networks including crude oil, product lines, and utility systems</li>
+                    <li>Developed alternative design solutions and field modifications to improve cost-effectiveness and constructability</li>
+                    <li>Coordinated NDT, hydrostatic testing, and pre-commissioning activities for piping systems</li>
+                    <li>Ensured compliance with ADNOC standards, ASME codes, and API specifications</li>
+                    <li>Led multi-disciplinary coordination for piping, civil, electrical, and instrumentation interfaces</li>
+                    <li>Controlled project expenses through efficient material management and resource utilization</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Surveyor Engineer</div>
+                        <div class="company">Professional Survey Appraisal & Loss Adjustment Company</div>
+                        <div class="date">Sharjah, UAE | September 2018 – March 2019</div>
+                    </div>
+                </div>
+                <span class="sector-tag">Marine & Industrial Inspection</span>
+                <ul class="responsibilities">
+                    <li>Conducted Marine & Non-Marine technical surveys for oil & gas and industrial facilities</li>
+                    <li>Inspection and verification of piping systems, mechanical equipment, and structural components</li>
+                    <li>Compared installations to industry regulations (ASME, API, ISO) and contract provisions</li>
+                    <li>Site verification of equipment layouts, piping routing, and structural integrity</li>
+                    <li>Prepared detailed inspection reports with recommendations for maintenance, repair, and compliance</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Mechanical Engineer</div>
+                        <div class="company">Maxtherm Technical Services</div>
+                        <div class="date">Dubai, UAE | June 2015 – April 2018</div>
+                    </div>
+                </div>
+                <span class="sector-tag">Commercial & Industrial</span>
+                <ul class="responsibilities">
+                    <li>Supervised mechanical and piping projects including HVAC, boiler systems, and industrial piping installations</li>
+                    <li>Piping Projects: Managed pipeline installation for hotels, industrial facilities, and commercial buildings</li>
+                    <li>On-site planning, execution coordination, and quality control for mechanical systems</li>
+                    <li>Coordinated stainless steel fabrication and installation for feed water tanks, condensate systems, and chimneys</li>
+                    <li>Managed site teams, enforced safety protocols, and ensured adherence to project specifications</li>
+                    <li>Material procurement, site logistics, and inventory control for piping and mechanical components</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Mechanical Engineer</div>
+                        <div class="company">A & A Engineering</div>
+                        <div class="date">Ernakulam, India | May 2014 – May 2015</div>
+                    </div>
+                </div>
+                <span class="sector-tag">Manufacturing & Installation</span>
+                <ul class="responsibilities">
+                    <li>Site execution of mechanical equipment installation and piping systems</li>
+                    <li>Conducted site inspections and material quantification for piping and mechanical projects</li>
+                    <li>Continuous snagging and quality control to minimize defects and rework</li>
+                    <li>Coordinated availability of tools, equipment, and materials for uninterrupted site operations</li>
+                    <li>Interpreted P&IDs and isometric drawings for correct assembly and installation</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skills-category-large">
+                    <h3>Oil & Gas / Piping Engineering</h3>
+                    
+                    <div class="skills-subcategory">
+                        <h4>Piping Systems</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Process Piping Installation</span>
+                            <span class="skill-tag">Crude Oil Pipelines</span>
+                            <span class="skill-tag">Product Pipelines</span>
+                            <span class="skill-tag">Utility Piping</span>
+                            <span class="skill-tag">High-Pressure Systems</span>
+                            <span class="skill-tag">Steam & Condensate</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-subcategory">
+                        <h4>Piping Documentation</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">P&ID Review & Interpretation</span>
+                            <span class="skill-tag">Isometric Drawing Review</span>
+                            <span class="skill-tag">Spool Drawing Coordination</span>
+                            <span class="skill-tag">Weldmap Review</span>
+                            <span class="skill-tag">Material Take-offs</span>
+                            <span class="skill-tag">As-Built Documentation</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-subcategory">
+                        <h4>Codes & Standards</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">ASME B31.3</span>
+                            <span class="skill-tag">API Standards</span>
+                            <span class="skill-tag">ASTM</span>
+                            <span class="skill-tag">ANSI</span>
+                            <span class="skill-tag">ADNOC Standards</span>
+                            <span class="skill-tag">ISO Codes</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-subcategory">
+                        <h4>Testing & Commissioning</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Hydrostatic Testing</span>
+                            <span class="skill-tag">Pneumatic Testing</span>
+                            <span class="skill-tag">Leak Testing</span>
+                            <span class="skill-tag">Pre-Commissioning</span>
+                            <span class="skill-tag">NDT Coordination</span>
+                            <span class="skill-tag">System Flushing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category-large">
+                    <h3>Site Engineering & Management</h3>
+                    
+                    <div class="skills-subcategory">
+                        <h4>Site Execution</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Site Supervision</span>
+                            <span class="skill-tag">Construction Oversight</span>
+                            <span class="skill-tag">Installation Coordination</span>
+                            <span class="skill-tag">Progress Monitoring</span>
+                            <span class="skill-tag">Quality Control</span>
+                            <span class="skill-tag">Safety Management</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-subcategory">
+                        <h4>Mechanical Systems</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HVAC Systems</span>
+                            <span class="skill-tag">Boiler Systems</span>
+                            <span class="skill-tag">Chilled Water</span>
+                            <span class="skill-tag">Firefighting Systems</span>
+                            <span class="skill-tag">Clean Rooms</span>
+                            <span class="skill-tag">Nitrogen Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-subcategory">
+                        <h4>Engineering Software</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AutoCAD</span>
+                            <span class="skill-tag">SolidWorks</span>
+                            <span class="skill-tag">Ansys</span>
+                            <span class="skill-tag">MS Project</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-subcategory">
+                        <h4>Fabrication & Welding</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Fabrication Oversight</span>
+                            <span class="skill-tag">Welding Supervision</span>
+                            <span class="skill-tag">WPS/PQR Review</span>
+                            <span class="skill-tag">Material Specifications</span>
+                            <span class="skill-tag">Structural Erection</span>
+                            <span class="skill-tag">S.S Fabrication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Major Projects Portfolio</h2>
+            <p class="projects-intro">
+                Extensive Oil & Gas experience across refineries and integrated facilities, complemented by diverse industrial, commercial, and infrastructure projects spanning manufacturing, hospitality, and renewable energy sectors.
+            </p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Subsea Cable Factory</h3>
+                    <p class="project-location">📍 Inverness, Scotland</p>
+                    <span class="project-type">Industrial Manufacturing</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Duqm Refinery Package 1</h3>
+                    <p class="project-location">📍 UAE/Oman</p>
+                    <span class="project-type">Oil & Gas Refinery</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>ADNOC Refining – Crude Flexibility Project</h3>
+                    <p class="project-location">📍 UAE</p>
+                    <span class="project-type">Oil & Gas - Process Piping</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>ADNOC - EPC for BAB Integrated Facilities</h3>
+                    <p class="project-location">📍 UAE</p>
+                    <span class="project-type">Oil & Gas - Integrated Facilities</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>ADNOC (Al Hhosn Gas) - Solar Water System for CICPA at Shah</h3>
+                    <p class="project-location">📍 UAE</p>
+                    <span class="project-type">Oil & Gas - Utilities</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>ADNOC (Al Hhosn Gas) - Solar Water System at Shah</h3>
+                    <p class="project-location">📍 UAE</p>
+                    <span class="project-type">Oil & Gas - Renewable Energy</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>The Pearl Diving Pool</h3>
+                    <p class="project-location">📍 UAE</p>
+                    <span class="project-type">Commercial Recreation</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Gulf Extrusion – Structural Bridge Fabrication & Erection</h3>
+                    <p class="project-location">📍 UAE</p>
+                    <span class="project-type">Structural/Piping</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Neopharma – Structure & Machine Erection with Pipeline</h3>
+                    <p class="project-location">📍 UAE</p>
+                    <span class="project-type">Pharmaceutical - Process Piping</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Winchester Hotel – Solar Water System</h3>
+                    <p class="project-location">📍 UAE</p>
+                    <span class="project-type">Hospitality - Mechanical</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Sheraton Hotel – Laundry Machine & Pipeline</h3>
+                    <p class="project-location">📍 UAE</p>
+                    <span class="project-type">Hospitality - Piping</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Multiple Boiler & Pipeline Projects</h3>
+                    <p class="project-location">📍 UAE (REMCO, Al Bateen)</p>
+                    <span class="project-type">Industrial HVAC/Piping</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Stainless Steel Fabrication Projects</h3>
+                    <p class="project-location">📍 UAE (Sultaco, Al Bateen)</p>
+                    <span class="project-type">S.S Tanks/Chimney/Piping</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Ecotherm – Cooling Tower Pipeline</h3>
+                    <p class="project-location">📍 UAE</p>
+                    <span class="project-type">HVAC - Process Piping</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education & Professional Development</h2>
+            
+            <div class="education-item">
+                <div class="degree">MSc in Mechanical Engineering</div>
+                <div class="institution">University of Huddersfield</div>
+                <div class="date">Huddersfield, West Yorkshire, United Kingdom | 2023 - 2024</div>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">Piping & Structural Engineering (Specialized Training)</div>
+                <div class="institution">Little Flower Engineering Institute</div>
+                <div class="date">Kerala, India | 2019</div>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">Quality Control Engineering (Professional Certification)</div>
+                <div class="institution">Induscan Petroleum Institute</div>
+                <div class="date">Kerala, India | 2014</div>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">BE in Mechanical Engineering</div>
+                <div class="institution">Anna University</div>
+                <div class="date">Tamil Nadu, India | 2010 - 2014</div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <p class="contact-intro">
+                    Interested in discussing opportunities or have a project in mind? Feel free to reach out using the form below or contact me directly.
+                </p>
+
+                <div class="contact-wrapper">
+                    <div class="contact-form-container">
+                        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Submit</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info-sidebar">
+                        <div class="contact-detail">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Scotland, United Kingdom</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">💼</div>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p><a href="https://www.linkedin.com/in/joseph-francis-820995145" target="_blank">View Profile</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">⏱️</div>
+                            <div>
+                                <h4>Response Time</h4>
+                                <p>Within 2-6 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-    <div class="stat-card">
-      <div class="stat-number">15+</div>
-      <div>Major Projects</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">5+</div>
-      <div>Oil & Gas Projects</div>
-    </div>
-  </div>
-</section>
 
-</div>
-
-<footer>
-  <p>© 2026 Joseph Francis | Mechanical Engineer</p>
-</footer>
-
-</body>
-</html>
+    <footer>
+        <p>&copy; 2025 Joseph Francis. All rights reserved.</p>
+        <p>Mechanical Engineer | Oil & Gas | Piping Specialist | Scotland, United Kingdom</p>
+        <p style="margin-top: 1
