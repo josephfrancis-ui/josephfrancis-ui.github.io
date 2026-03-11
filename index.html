@@ -615,6 +615,148 @@
             }
         }
 
+        /* Project Gallery Styles */
+        .gallery-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.05em;
+            color: var(--dark);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            aspect-ratio: 4/3;
+            background: var(--light);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: var(--white);
+            padding: 20px;
+            transform: translateY(0);
+            transition: all 0.3s;
+        }
+
+        .gallery-overlay h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.2em;
+        }
+
+        .gallery-overlay p {
+            margin: 0;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .gallery-note {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            color: #856404;
+        }
+
+        .gallery-note strong {
+            color: #664d03;
+        }
+
+        /* Simple Contact Section */
+        .contact-simple {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-intro {
+            font-size: 1.1em;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--light);
+            padding: 25px 35px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: var(--accent);
+        }
+
+        .contact-link.linkedin:hover {
+            background: #0077b5;
+            color: var(--white);
+        }
+
+        .contact-link .contact-icon {
+            font-size: 2.5em;
+        }
+
+        .contact-link .contact-text h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.3em;
+        }
+
+        .contact-link .contact-text p {
+            margin: 0;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .contact-link.linkedin:hover .contact-text p {
+            opacity: 1;
+        }
+
         /* Contact Section */
         .contact-content {
             max-width: 1000px;
@@ -790,6 +932,10 @@
 
             .contact-info-sidebar {
                 order: -1;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1358,81 +1504,19 @@
 
         <section id="contact">
             <h2>Get In Touch</h2>
-            <div class="contact-content">
+            <div class="contact-simple">
                 <p class="contact-intro">
-                    Interested in discussing opportunities or have a project in mind? Feel free to reach out using the form below or contact me directly.
+                    Interested in discussing opportunities? Feel free to connect with me on LinkedIn.
                 </p>
-
-                <div class="contact-wrapper">
-                    <div class="contact-form-container">
-                        <form id="contact-form" class="contact-form">
-                            <!-- Web3Forms Access Key -->
-                            <input type="hidden" name="access_key" value="def07aa0-b5a8-494f-b8ed-4cc5ef76141c">
-                            <input type="hidden" name="subject" value="New Portfolio Contact from Joseph Francis Website">
-                            <input type="hidden" name="from_name" value="Joseph Francis Portfolio">
-                            
-                            <!-- Honeypot Spam Protection (hidden field) -->
-                            <input type="checkbox" name="botcheck" style="display: none;">
-                            
-                            <div class="form-group">
-                                <label for="name">Name *</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="6" required></textarea>
-                            </div>
-
-                            <!-- hCaptcha Spam Protection -->
-                            <div class="h-captcha" 
-                                 data-captcha="true"
-                                 data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-                                 style="margin-bottom: 15px;">
-                            </div>
-
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
-                        <p style="text-align: center; margin-top: 15px; font-size: 0.85em; color: #7f8c8d;">
-                            Your message will be sent securely with spam protection. I typically respond within 2-6 hours.
-                        </p>
-                    </div>
-
-                    <div class="contact-info-sidebar">
-                        <div class="contact-detail">
-                            <div class="contact-icon">📍</div>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Scotland, United Kingdom</p>
-                            </div>
+                
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/joseph-francis-820995145" target="_blank" class="contact-link linkedin">
+                        <span class="contact-icon">💼</span>
+                        <div class="contact-text">
+                            <h3>LinkedIn</h3>
+                            <p>Connect with me professionally</p>
                         </div>
-
-                        <div class="contact-detail">
-                            <div class="contact-icon">💼</div>
-                            <div>
-                                <h4>LinkedIn</h4>
-                                <p><a href="https://www.linkedin.com/in/joseph-francis-820995145" target="_blank">View Profile</a></p>
-                            </div>
-                        </div>
-
-                        <div class="contact-detail">
-                            <div class="contact-icon">⏱️</div>
-                            <div>
-                                <h4>Response Time</h4>
-                                <p>Within 2-6 hours</p>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -1443,77 +1527,6 @@
         <p>Mechanical Engineer | Oil & Gas | Renewable Energy | Construction | Piping Specialist | Scotland, United Kingdom</p>
         <p style="margin-top: 10px; font-size: 0.9em;">Available for challenging engineering opportunities in oil & gas, renewable energy, and construction projects</p>
     </footer>
-
-    <!-- Success Popup -->
-    <div id="success-popup" class="success-popup">
-        <div class="popup-content">
-            <h3>✓ Message Sent!</h3>
-            <p>Thank you for contacting me. I've received your message and will respond within 2-6 hours.</p>
-            <button onclick="closePopup()" class="popup-close-btn">Close</button>
-        </div>
-    </div>
-
-    <!-- Web3Forms Script -->
-    <script src="https://web3forms.com/client/script.js" async defer></script>
-
-    <!-- Contact Form Handler -->
-    <script>
-        const contactForm = document.getElementById('contact-form');
-        
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const submitButton = contactForm.querySelector('.submit-btn');
-            const originalButtonText = submitButton.textContent;
-            
-            // Show loading state
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-            
-            try {
-                const response = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok && result.success) {
-                    // Show success popup
-                    document.getElementById('success-popup').classList.add('show');
-                    // Reset form
-                    contactForm.reset();
-                    // Reset hCaptcha if it exists
-                    if (typeof hcaptcha !== 'undefined') {
-                        hcaptcha.reset();
-                    }
-                } else {
-                    // Show error details
-                    console.error('Form submission error:', result);
-                    alert('Form submission failed: ' + (result.message || 'Please try again or contact me directly via email: josephkadiyanattu@outlook.com'));
-                }
-            } catch (error) {
-                console.error('Network error:', error);
-                alert('Network error. Please check your connection and try again, or contact me directly via email: josephkadiyanattu@outlook.com');
-            } finally {
-                // Reset button
-                submitButton.textContent = originalButtonText;
-                submitButton.disabled = false;
-            }
-        });
-        
-        function closePopup() {
-            document.getElementById('success-popup').classList.remove('show');
-        }
-        
-        // Close popup when clicking outside
-        document.getElementById('success-popup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePopup();
-            }
-        });
-    </script>
 
 </body>
 </html>
