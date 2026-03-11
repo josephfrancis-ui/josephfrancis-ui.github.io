@@ -1479,16 +1479,23 @@
                 
                 const result = await response.json();
                 
-                if (result.success) {
+                if (response.ok && result.success) {
                     // Show success popup
                     document.getElementById('success-popup').classList.add('show');
                     // Reset form
                     contactForm.reset();
+                    // Reset hCaptcha if it exists
+                    if (typeof hcaptcha !== 'undefined') {
+                        hcaptcha.reset();
+                    }
                 } else {
-                    alert('Something went wrong. Please try again or contact me directly via email.');
+                    // Show error details
+                    console.error('Form submission error:', result);
+                    alert('Form submission failed: ' + (result.message || 'Please try again or contact me directly via email: josephkadiyanattu@outlook.com'));
                 }
             } catch (error) {
-                alert('Network error. Please check your connection and try again.');
+                console.error('Network error:', error);
+                alert('Network error. Please check your connection and try again, or contact me directly via email: josephkadiyanattu@outlook.com');
             } finally {
                 // Reset button
                 submitButton.textContent = originalButtonText;
